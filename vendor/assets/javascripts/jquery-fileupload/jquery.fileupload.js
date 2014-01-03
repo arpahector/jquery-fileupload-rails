@@ -337,6 +337,9 @@
                 // to the file size(s) of the current upload and a loaded data
                 // property calculated accordingly:
                 this._trigger('progress', e, data);
+                if (this._bitrateTimer == null){
+                    this._bitrateTimer = new this._BitrateTimer();
+                }
                 // Trigger a global progress event for all current file uploads,
                 // including ajax calls queued for sequential file uploads:
                 this._trigger('progressall', e, this._progress);
